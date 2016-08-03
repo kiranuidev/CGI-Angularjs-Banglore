@@ -1,10 +1,17 @@
 <div ng-controller="registerCtrl">
-    <form class="form-horizontal">
+    <form class="form-horizontal" name="registerForm" novalidate>
         <div class="form-group">
             <label for="inputEmail" class="control-label col-xs-2">First Name</label>
             <div class="col-xs-4">
-                <input type="text" class="form-control" placeholder="First Name" ng-model="user.firstName">
+                <input type="text" name="firstName" class="form-control" placeholder="First Name" ng-model="user.firstName" required ng-minlength="4" ng-maxlength="20" ng-pattern="/^[a-zA-Z ]*$/">
+                <div ng-show="registerForm.firstName.$dirty">
+                    <p ng-show="registerForm.firstName.$error.required">First Name Required</p>
 
+                    <p ng-show="registerForm.firstName.$error.minlength">Minimum Length is 4</p>
+
+                    <p ng-show="registerForm.firstName.$error.maxlength">maximum Length is 20</p>
+                    <p ng-show="registerForm.firstName.$error.pattern">Invalid Pattern</p>
+                </div>
             </div>
         </div>
 
