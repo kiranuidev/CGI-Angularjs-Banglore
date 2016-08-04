@@ -14,11 +14,19 @@
         <ul class="nav navbar-nav">
             <li class="active" ng-click="loadContent('home')"><a href="#">Home</a></li>
             <li class="active" ng-click="loadContent('products')"><a href="#">Products</a></li>
+            <li ng-click="loadContent('cart')"><a href="#">Cart</a></li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right" ng-show="showLogin">
             <li ng-click="loadContent('register')"><a href="#">Register</a></li>
             <li ng-click="loadContent('login')"><a href="#">Login</a></li>
-            <li ng-click="loadContent('cart')"><a href="#">Cart</a></li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right" ng-show="!showLogin">
+            <li>
+                <a href="#">{{userdetails}}</a>
+            </li>
+            <li ng-click="logout()"><a href="#">Logout</a></li>
+
         </ul>
     </div>
 </nav>
