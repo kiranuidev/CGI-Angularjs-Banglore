@@ -1,1 +1,1 @@
-angular.module("flipzon", ["register", "login", "products"]);
+angular.module("flipzon", ["register", "login", "products", "components"]);
