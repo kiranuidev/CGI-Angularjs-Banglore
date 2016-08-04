@@ -15,27 +15,12 @@ angular.module("products")
             this.getProductsFromPromise = function () {
                 var dfd = $q.defer();
 
-                var items = [
-                    {
-                        "id": "1",
-                        "model": "Tom",
-                        "name": "Cruise",
-                        "description": "AAAA",
-                        "price": 2000
-      },
-                    {
-                        "id": "1",
-                        "model": "KIN",
-                        "name": "JOO",
-                        "description": "abbbb",
-                        "price": 2000
-      }];
-
-                if (items) {
-                    dfd.resolve(items)
-                } else {
-                    dfd.reject("there are no items");
-                }
+                $http.get("app/data/products.json")
+                    .then(function (response) {
+                        dfd.resolve(response.data.products);
+                    }).catch(function (response) {
+                        console.log(response);
+                    });
 
                 return dfd.promise;
 
@@ -48,6 +33,22 @@ angular.module("products")
 
             this.getSelectedProducts = function () {
                 return productsForCheckout;
+            };
+
+
+            this.getWallMartProducts = function () {
+                var url = "http://api.walmartlabs.com/v1/search?query=ipod&format=json&apiKey=yjrruzc9fgbxvs28qw2rjczv";
+                var dfd = $q.defer();
+                $http.get(url)
+                    .then(function (response) {
+                        console.log(response.data);
+                    })
+                    .catch(function (response) {
+                        console.log(response);
+                    });
+
+                return dfd.promise;
+
             };
 
 }]);
