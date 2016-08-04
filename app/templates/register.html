@@ -25,7 +25,7 @@
         <div class="form-group">
             <label for="inputEmail" class="control-label col-xs-2">Age</label>
             <div class="col-xs-4">
-                <input type="text" class="form-control" placeholder="Age" ng-model="user.age">
+                <input type="text" class="form-control" placeholder="Age" ng-model="user.age" cgi-numbers-only inputlength="3">
             </div>
         </div>
 
@@ -52,7 +52,7 @@
             <label for="inputEmail" class="control-label col-xs-2">Phone Number</label>
             <div class="input-group input-group-sm col-xs-4">
                 <span class="input-group-addon"></span>
-                <input type="text" class="form-control" ng-model="user.phoneNumber" name="phonenumber" placeholder="Phone Number">
+                <input type="text" class="form-control" ng-model="user.phoneNumber" name="phonenumber" inputlength="10" cgi-numbers-only placeholder="Phone Number">
             </div>
 
         </div>
