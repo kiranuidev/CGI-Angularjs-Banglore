@@ -17,6 +17,7 @@ angular.module("flipzon")
             }
 
         };
+
         $scope.logout = function () {
             loginSvc.logout();
             $scope.loadContent("login");

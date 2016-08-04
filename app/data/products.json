@@ -1,0 +1,25 @@
+{
+
+    "products": [
+        {
+            "id": "1",
+            "model": "Tom",
+            "name": "Cruise",
+            "description": "AAAA",
+            "price": 2000
+      },
+        {
+            "id": "1",
+            "model": "KIN",
+            "name": "JOO",
+            "description": "abbbb",
+            "price": 2000
+      },
+        {
+            "model": "KasdfaasIN",
+            "name": "JOOasda",
+            "description": "abasdffasdfabbb",
+            "price": 4000
+      }
+    ]
+}
