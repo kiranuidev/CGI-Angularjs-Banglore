@@ -1,4 +1,4 @@
-<div ng-controller="productCtrl">
+<div ng-controller="cartCtrl">
     <input type="text" class="form-control col-xs-4" ng-model="searchProduct">
     <hr/>
     <br>
@@ -9,16 +9,11 @@
             <td>Description</td>
             <td>Price</td>
         </tr>
-        <tr ng-repeat="item in products
-           |filter:{price:searchProduct}
-           |orderBy:'-model'">
+        <tr ng-repeat="item in cartProducts">
             <td>{{$index+1}}</td>
             <td>{{item.model}}</td>
             <td>{{item.description}}</td>
             <td>{{item.price|currency:"Rs."}}</td>
-            <td>
-                <button class="btn btn-primary" ng-click="addProduct(item)">Add To checkout</button>
-            </td>
         </tr>
     </table>
 </div>
