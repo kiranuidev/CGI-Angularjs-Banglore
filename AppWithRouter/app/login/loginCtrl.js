@@ -4,15 +4,15 @@ angular.module("login")
             $scope.loginUser = {};
 
             $scope.login = function () {
-                $state.go("home", {
-                    data: "Hey"
-                });
-                /*var isLoggedIn = loginSvc.loginUser($scope.loginUser);
+                /*$state.go("home", {
+    data: "Hey"
+});*/
+               var isLoggedIn = loginSvc.loginUser($scope.loginUser);
 if (isLoggedIn) {
     $rootScope.$broadcast("USER_LOGGEDIN", {
         data: "congrats"
     });
-}*/
+}
             };
 
             $scope.name = "kiran";
