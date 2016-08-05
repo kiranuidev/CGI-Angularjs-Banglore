@@ -21,7 +21,7 @@
         <ul class="nav navbar-nav">
             <li class="active" ng-click="loadContent('home')"><a href="#">Home</a></li>
             <li class="active" ng-click="loadContent('products')"><a href="#">Products</a></li>
-            <li ng-click="loadContent('cart')"><a href="#">Cart</a></li>
+            <li ng-click="loadContent('cart')"><a href="#">Cart {{cartCount}}</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right" ng-show="showLogin">
             <li ng-click="loadContent('register')"><a href="#">Register</a></li>

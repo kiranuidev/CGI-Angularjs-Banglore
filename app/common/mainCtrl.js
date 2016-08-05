@@ -1,7 +1,8 @@
 angular.module("flipzon")
-    .controller("mainCtrl", ["$scope", "loginSvc", function ($scope, loginSvc) {
+    .controller("mainCtrl", ["$scope", "$rootScope", "loginSvc", function ($scope, $rootScope, loginSvc) {
         $scope.headerUrl = "app/templates/header.html";
         $scope.showLogin = true;
+        $scope.cartCount = 0;
 
         var baseUrl = "app/templates/";
         $scope.loadContent = function (type) {
@@ -25,6 +26,15 @@ angular.module("flipzon")
         $scope.logout = function () {
             loginSvc.logout();
             $scope.loadContent("login");
-        }
+        };
+        $rootScope.$on("USER_LOGGEDIN", function (evt, args) {
+            console.log(args);
+            $scope.loadContent("products");
+        });
+
+        $rootScope.$on("PRODUCT_ADDED_CART", function (evt, args) {
+            $scope.cartCount++;
+        });
+
 
             }]);

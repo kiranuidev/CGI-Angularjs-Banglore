@@ -25,6 +25,7 @@ angular.module("login")
                 .catch(function (errorResponse) {
                     console.log(errorResponse);
                 });
+            return true;
 
         };
 

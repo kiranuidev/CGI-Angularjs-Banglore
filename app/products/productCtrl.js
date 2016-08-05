@@ -1,11 +1,14 @@
 angular.module("products")
-    .controller("productCtrl", ["$scope", "productSvc",
-                                function ($scope, productSvc) {
+    .controller("productCtrl", ["$scope", "productSvc", "$rootScope",
+                                function ($scope, productSvc, $rootScope) {
 
             //$scope.products = productSvc.products();
 
             $scope.addProduct = function (product) {
                 productSvc.addProductForCheckout(product);
+                $rootScope.$broadcast("PRODUCT_ADDED_CART", {
+                    data: product
+                });
             };
 
 
